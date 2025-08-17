@@ -1,5 +1,6 @@
-package org.example.tests;
+package org.example.sample;
 
+import org.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,17 +8,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class VwoTestLogin {
 
+    @BeforeTest
+    public void setUp(){
+
+        DriverManager.init();
+    }
+
 
     @Test
     public void vwoTestLogin() throws InterruptedException {
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = DriverManager.getDriver();
         driver.get("https://app.vwo.com/#/login");
         driver.findElement(By.id("login-username")).sendKeys("yadraj@gmail.com");
         driver.findElement(By.id("login-password")).sendKeys("123");
