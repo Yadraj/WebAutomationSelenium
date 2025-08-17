@@ -1,5 +1,6 @@
 package org.example.vwoTests;
 
+import org.example.base.CommonToAllTests;
 import org.example.driver.DriverManager;
 import org.example.pages.pageObjectModel.LoginPage_POM;
 import org.example.utils.PropertyReader;
@@ -9,13 +10,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class vwoTest_POM {
+public class vwoTest_POM extends CommonToAllTests {
 
-    @BeforeTest
-    public void setUp(){
 
-        DriverManager.init();
-    }
 
     @Test
     public  void negativeTestCase(){
@@ -26,10 +23,5 @@ public class vwoTest_POM {
 
     }
 
-    @AfterTest
-    public  void tearDown(){
 
-        DriverManager.down();
-
-    }
 }

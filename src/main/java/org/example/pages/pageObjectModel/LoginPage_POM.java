@@ -1,5 +1,6 @@
 package org.example.pages.pageObjectModel;
 
+import org.example.base.CommonToAllPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class LoginPage_POM {
+public class LoginPage_POM extends CommonToAllPages {
 
     WebDriver driver;
 
